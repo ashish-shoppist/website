@@ -1,168 +1,97 @@
-<!doctype html>
-<html ng-app="fuse">
-    <head>
-        <base href="/">
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Shoppist</title>
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="styles/vendor.css">
-
-        <link rel="stylesheet" href="styles/app.css">
-
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic'
-              rel='stylesheet' type='text/css'>
-    </head>
-
-    <!--[if lt IE 10]>
+<!doctype html><html ng-app="fuse"><head><base href="/"><meta charset="utf-8"><meta name="description" content=""><meta
+ name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Shoppist</title><link 
+rel="stylesheet" href="styles/vendor-e2eb2c9142.css"><link rel="stylesheet" href="styles/app-0651a6f7a0.css"><link 
+href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic" 
+rel="stylesheet" type="text/css"></head>
+<!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="IndexController as vm"
-          class="{{state.current.bodyClass || ''}}">
-
-        <!-- SPLASH SCREEN -->
-        <ms-splash-screen id="splash-screen">
-            <div class="center">
-                <div class="logo">
-                    <span>H</span>
-                </div>
-                <!-- Material Design Spinner -->
-                <div class="spinner-wrapper">
-                    <div class="spinner">
-                        <div class="inner">
-                            <div class="gap"></div>
-                            <div class="left">
-                                <div class="half-circle"></div>
-                            </div>
-                            <div class="right">
-                                <div class="half-circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- / Material Design Spinner -->
-            </div>
-        </ms-splash-screen>
-        <!-- / SPLASH SCREEN -->
-
-        <div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
-
-        <ms-theme-options></ms-theme-options>
-
-        <script src="scripts/vendor.js"></script>
-
-        
-        <!-- inject:js -->
-        <script src="app/main/ui/theme-colors/theme-colors.module.js"></script>
-        <script src="app/main/ui/theme-colors/dialogs/custom-theme/custom-theme-dialog.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/tabbed/tabbed.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/tabbed/tabbed.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.controller.js"></script>
-        <script src="app/main/ui/page-layouts/simple/fullwidth/fullwidth.module.js"></script>
-        <script src="app/main/ui/page-layouts/simple/fullwidth/fullwidth.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.controller.js"></script>
-        <script src="app/main/ui/page-layouts/carded/fullwidth/fullwidth.module.js"></script>
-        <script src="app/main/ui/page-layouts/carded/fullwidth/fullwidth.controller.js"></script>
-        <script src="app/main/ui/page-layouts/blank/blank.module.js"></script>
-        <script src="app/main/ui/page-layouts/blank/blank.controller.js"></script>
-        <script src="app/quick-panel/quick-panel.module.js"></script>
-        <script src="app/quick-panel/tabs/chat/chat-tab.controller.js"></script>
-        <script src="app/main/ui/typography/typography.module.js"></script>
-        <script src="app/main/ui/typography/typography.controller.js"></script>
-        <script src="app/main/ui/theme-colors/theme-colors.controller.js"></script>
-        <script src="app/main/ui/material-colors/material-colors.js"></script>
-        <script src="app/main/ui/material-colors/material-colors.controller.js"></script>
-        <script src="app/main/ui/icons/icons.module.js"></script>
-        <script src="app/main/ui/icons/icons.controller.js"></script>
-        <script src="app/main/ui/helper-classes/helper-classes.module.js"></script>
-        <script src="app/main/ui/helper-classes/helper-classes.controller.js"></script>
-        <script src="app/main/ui/forms/forms.module.js"></script>
-        <script src="app/main/ui/forms/forms.controller.js"></script>
-        <script src="app/main/auth/register/register.module.js"></script>
-        <script src="app/main/auth/register/register.controller.js"></script>
-        <script src="app/main/auth/forms/forms.module.js"></script>
-        <script src="app/main/auth/forms/forms.controller.js"></script>
-        <script src="app/core/core.module.js"></script>
-        <script src="app/core/directives/ms-widget/ms-widget.directive.js"></script>
-        <script src="app/core/directives/ms-timeline/ms-timeline.js"></script>
-        <script src="app/core/directives/ms-stepper/ms-stepper.directive.js"></script>
-        <script src="app/core/directives/ms-splash-screen/ms-splash-screen.directive.js"></script>
-        <script src="app/core/directives/ms-sidenav-helper/ms-sidenav-helper.directive.js"></script>
-        <script src="app/core/directives/ms-shortcuts/ms-shortcuts.directive.js"></script>
-        <script src="app/core/directives/ms-search-bar/ms-search-bar.directive.js"></script>
-        <script src="app/core/directives/ms-scroll/ms-scroll.directive.js"></script>
-        <script src="app/core/directives/ms-responsive-table/ms-responsive-table.directive.js"></script>
-        <script src="app/core/directives/ms-random-class/ms-random-class.directive.js"></script>
-        <script src="app/core/directives/ms-navigation/ms-navigation.directive.js"></script>
-        <script src="app/core/directives/ms-nav/ms-nav.directive.js"></script>
-        <script src="app/core/directives/ms-material-color-picker/ms-material-color-picker.directive.js"></script>
-        <script src="app/core/directives/ms-masonry/ms-masonry.directive.js"></script>
-        <script src="app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script>
-        <script src="app/core/directives/ms-form-wizard/ms-form-wizard.directive.js"></script>
-        <script src="app/core/directives/ms-datepicker-fix/ms-datepicker-fix.directive.js"></script>
-        <script src="app/core/directives/ms-card/ms-card.directive.js"></script>
-        <script src="app/main/sample/sample.module.js"></script>
-        <script src="app/main/sample/sample.controller.js"></script>
-        <script src="app/main/home/home.module.js"></script>
-        <script src="app/main/home/home.controller.js"></script>
-        <script src="app/core/theming/fuse-theming.service.js"></script>
-        <script src="app/core/theming/fuse-theming.config.js"></script>
-        <script src="app/core/theming/fuse-themes.constant.js"></script>
-        <script src="app/core/theming/fuse-palettes.constant.js"></script>
-        <script src="app/core/theming/fuse-generator.service.js"></script>
-        <script src="app/core/theme-options/theme-options.directive.js"></script>
-        <script src="app/core/services/ms-utils.service.js"></script>
-        <script src="app/core/services/ms-api.provider.js"></script>
-        <script src="app/core/services/api-resolver.service.js"></script>
-        <script src="app/core/filters/tag.filter.js"></script>
-        <script src="app/core/filters/filterByPropIds.filter.js"></script>
-        <script src="app/core/filters/filterByIds.filter.js"></script>
-        <script src="app/core/filters/basic.filter.js"></script>
-        <script src="app/core/filters/altDate.filter.js"></script>
-        <script src="app/core/directives/highlight.directive.js"></script>
-        <script src="app/core/config/fuse-config.provider.js"></script>
-        <script src="app/toolbar/toolbar.module.js"></script>
-        <script src="app/toolbar/toolbar.controller.js"></script>
-        <script src="app/quick-panel/quick-panel.controller.js"></script>
-        <script src="app/navigation/navigation.module.js"></script>
-        <script src="app/navigation/navigation.controller.js"></script>
-        <script src="app/index.module.js"></script>
-        <script src="app/main/main.controller.js"></script>
-        <script src="app/core/core.run.js"></script>
-        <script src="app/core/core.config.js"></script>
-        <script src="app/index.run.js"></script>
-        <script src="app/index.route.js"></script>
-        <script src="app/index.controller.js"></script>
-        <script src="app/index.constants.js"></script>
-        <script src="app/index.config.js"></script>
-        <script src="app/index.api.js"></script>
-        <script src="app/main/ui/ui.module.js"></script>
-        <!-- endinject -->  
-
-    </body>
-</html>
+<body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="IndexController as vm" 
+class="{{state.current.bodyClass || ''}}"><ms-splash-screen id="splash-screen"><div class="center"><div class="logo">
+<span>H</span></div><div class="spinner-wrapper"><div class="spinner"><div class="inner"><div class="gap"></div><div 
+class="left"><div class="half-circle"></div></div><div class="right"><div class="half-circle"></div></div></div></div>
+</div></div></ms-splash-screen><div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
+<ms-theme-options></ms-theme-options><script src="scripts/vendor-d1b544933e.js"></script><script 
+src="app/main/ui/theme-colors/theme-colors.module.js"></script><script 
+src="app/main/ui/theme-colors/dialogs/custom-theme/custom-theme-dialog.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/tabbed/tabbed.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/tabbed/tabbed.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav-iii/right-sidenav-iii.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav-ii/right-sidenav-ii.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/right-sidenav/right-sidenav.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav-iii/left-sidenav-iii.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav-ii/left-sidenav-ii.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/left-sidenav/left-sidenav.controller.js"></script><script 
+src="app/main/ui/page-layouts/simple/fullwidth/fullwidth.module.js"></script><script 
+src="app/main/ui/page-layouts/simple/fullwidth/fullwidth.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/right-sidenav-ii/right-sidenav-ii.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/right-sidenav/right-sidenav.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/left-sidenav-ii/left-sidenav-ii.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/left-sidenav/left-sidenav.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/fullwidth-ii/fullwidth-ii.controller.js"></script><script 
+src="app/main/ui/page-layouts/carded/fullwidth/fullwidth.module.js"></script><script 
+src="app/main/ui/page-layouts/carded/fullwidth/fullwidth.controller.js"></script><script 
+src="app/main/ui/page-layouts/blank/blank.module.js"></script><script 
+src="app/main/ui/page-layouts/blank/blank.controller.js"></script><script src="app/quick-panel/quick-panel.module.js">
+</script><script src="app/quick-panel/tabs/chat/chat-tab.controller.js"></script><script 
+src="app/main/ui/typography/typography.module.js"></script><script 
+src="app/main/ui/typography/typography.controller.js"></script><script 
+src="app/main/ui/theme-colors/theme-colors.controller.js"></script><script 
+src="app/main/ui/material-colors/material-colors.js"></script><script 
+src="app/main/ui/material-colors/material-colors.controller.js"></script><script 
+src="app/main/ui/icons/icons.module.js"></script><script src="app/main/ui/icons/icons.controller.js"></script><script 
+src="app/main/ui/helper-classes/helper-classes.module.js"></script><script 
+src="app/main/ui/helper-classes/helper-classes.controller.js"></script><script src="app/main/ui/forms/forms.module.js">
+</script><script src="app/main/ui/forms/forms.controller.js"></script><script 
+src="app/main/auth/register/register.module.js"></script><script src="app/main/auth/register/register.controller.js">
+</script><script src="app/main/auth/forms/forms.module.js"></script><script 
+src="app/main/auth/forms/forms.controller.js"></script><script src="app/core/core.module.js"></script><script 
+src="app/core/directives/ms-timeline/ms-timeline.js"></script><script 
+src="app/core/directives/ms-widget/ms-widget.directive.js"></script><script 
+src="app/core/directives/ms-stepper/ms-stepper.directive.js"></script><script 
+src="app/core/directives/ms-splash-screen/ms-splash-screen.directive.js"></script><script 
+src="app/core/directives/ms-sidenav-helper/ms-sidenav-helper.directive.js"></script><script 
+src="app/core/directives/ms-search-bar/ms-search-bar.directive.js"></script><script 
+src="app/core/directives/ms-shortcuts/ms-shortcuts.directive.js"></script><script 
+src="app/core/directives/ms-scroll/ms-scroll.directive.js"></script><script 
+src="app/core/directives/ms-responsive-table/ms-responsive-table.directive.js"></script><script 
+src="app/core/directives/ms-navigation/ms-navigation.directive.js"></script><script 
+src="app/core/directives/ms-random-class/ms-random-class.directive.js"></script><script 
+src="app/core/directives/ms-material-color-picker/ms-material-color-picker.directive.js"></script><script 
+src="app/core/directives/ms-nav/ms-nav.directive.js"></script><script 
+src="app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script><script 
+src="app/core/directives/ms-masonry/ms-masonry.directive.js"></script><script 
+src="app/core/directives/ms-form-wizard/ms-form-wizard.directive.js"></script><script 
+src="app/core/directives/ms-datepicker-fix/ms-datepicker-fix.directive.js"></script><script 
+src="app/core/directives/ms-card/ms-card.directive.js"></script><script src="app/main/sample/sample.module.js">
+</script><script src="app/main/sample/sample.controller.js"></script><script src="app/main/home/home.module.js">
+</script><script src="app/main/home/home.controller.js"></script><script 
+src="app/core/theming/fuse-theming.service.js"></script><script src="app/core/theming/fuse-theming.config.js"></script>
+<script src="app/core/theming/fuse-themes.constant.js"></script><script 
+src="app/core/theming/fuse-palettes.constant.js"></script><script src="app/core/theming/fuse-generator.service.js">
+</script><script src="app/core/theme-options/theme-options.directive.js"></script><script 
+src="app/core/services/ms-utils.service.js"></script><script src="app/core/services/ms-api.provider.js"></script>
+<script src="app/core/services/api-resolver.service.js"></script><script src="app/core/filters/tag.filter.js"></script>
+<script src="app/core/filters/filterByPropIds.filter.js"></script><script src="app/core/filters/filterByIds.filter.js">
+</script><script src="app/core/filters/basic.filter.js"></script><script src="app/core/filters/altDate.filter.js">
+</script><script src="app/core/directives/highlight.directive.js"></script><script 
+src="app/core/config/fuse-config.provider.js"></script><script src="app/toolbar/toolbar.module.js"></script><script 
+src="app/toolbar/toolbar.controller.js"></script><script src="app/quick-panel/quick-panel.controller.js"></script>
+<script src="app/navigation/navigation.module.js"></script><script src="app/navigation/navigation.controller.js">
+</script><script src="app/index.module.js"></script><script src="app/main/main.controller.js"></script><script 
+src="app/core/core.run.js"></script><script src="app/core/core.config.js"></script><script src="app/index.run.js">
+</script><script src="app/index.route.js"></script><script src="app/index.controller.js"></script><script 
+src="app/index.constants.js"></script><script src="app/index.config.js"></script><script src="app/index.api.js">
+</script><script src="app/main/ui/ui.module.js"></script></body></html>
